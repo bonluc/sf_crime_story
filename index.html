@@ -1,14 +1,107 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>My Data Viz Site</title>
+    <meta charset="UTF-8">
+    <title>San Francisco Crime Data Story</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        section {
+            padding: 60px 20px;
+            max-width: 900px;
+            margin: auto;
+        }
+
+        h1, h2 {
+            text-align: center;
+        }
+
+        .viz {
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        iframe {
+            width: 100%;
+            height: 600px;
+            border: none;
+        }
+
+        img {
+            max-width: 100%;
+        }
+    </style>
 </head>
+
 <body>
-    <h1>Hello World!</h1>
-    <p>This site contains data visualizations about crime in San Francisco.</p>
-    <a href="visualizations/crime_hourly_interactive.html">Explore hourly crime patterns →</a>
-    <img src="images/Assault_crimes_by_hour.png" alt="Assault crimes by hour in SF" style="max-width: 100%;">
-    <iframe src="visualizations/heatmap_prostitution.html" width="100%" height="600" frameborder="0"></iframe>
+
+    <!-- INTRO -->
+    <section>
+        <h1>Crime in San Francisco</h1>
+        <p>
+            This page is dedicated to investigating and exploring patterns on SF crime data during the COVID-19 pandemic. 
+            The dataset contains x crimes from the period of 2019 to 2022. The data contains temporal and spatial information which is used
+            to uncover and highlight some of these patterns. This project has hand-picked a select few personal focus crimes to explore in more depth, these include: Arson, Burglary, Drug Violation, Embezzlement, Forgery and Counterfeiting, Larceny Theft, Missing Person, Motor Vehicle theft, Prostitution, Robbery, Stolen Property, Vandalism, Weapon Laws
+        </p>
+        <p>
+            Scroll down to explore different perspectives on the data.
+        </p>
+    </section>
+
+
+    <!-- VISUALIZATION 1 -->
+    <section>
+        <h2>What crimes increased the most during the pandemic</h2>
+        <p>
+            This visualization compares the number of crimes in each category before and during the pandemic. It highlights which crime types saw the largest increases. From the plot, burglary and motor vehicle theft stands out with a significant increase during the pandemic compared to other crimes.
+        </p>
+
+        <div class="viz">
+            <img src="images/static_crime_category_comparison.png" alt="Crime by category comparison">
+        </div>
+    </section>
+
+
+    <!-- VISUALIZATION 2 -->
+    <section>
+        <h2>Where do these crimes concentrate?</h2>
+        <p>
+            Focusing on burglary, we want to figure out where these crime occur the most frequent in SF.
+        </p>
+
+        <div class="viz">
+            <iframe src="visualizations/heatmap_burglary.html"></iframe>
+        </div>
+    </section>
+
+
+    <!-- VISUALIZATION 3 -->
+    <section>
+        <h2>How does crime evolve over time?</h2>
+        <p>
+            Looking at trends over time allows us to see whether crime is increasing,
+            decreasing, or shifting in nature.
+        </p>
+
+        <div class="viz">
+            <!-- Replace with third visualization -->
+            <iframe src="visualizations/your_third_plot.html"></iframe>
+        </div>
+    </section>
+
+
+    <!-- CONCLUSION -->
+    <section>
+        <h2>Conclusion</h2>
+        <p>
+            Something here...
+        </p>
+    </section>
 
 </body>
 </html>
