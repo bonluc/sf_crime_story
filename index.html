@@ -44,9 +44,10 @@
     <section>
         <h1>Crime in San Francisco</h1>
         <p>
-            This page is dedicated to investigating and exploring patterns on SF crime data during the COVID-19 pandemic. 
-            The dataset contains x crimes from the period of 2019 to 2022. The data contains temporal and spatial information which is used
-            to uncover and highlight some of these patterns. This project has hand-picked a select few personal focus crimes to explore in more depth, these include: Arson, Burglary, Drug Violation, Embezzlement, Forgery and Counterfeiting, Larceny Theft, Missing Person, Motor Vehicle theft, Prostitution, Robbery, Stolen Property, Vandalism, Weapon Laws
+            This page explores crime data from San Francisco. More specifically, it investigates how crime patterns change during a pandemic such as COVID-19. The full dataset spans from 2003 to the present day. In this study, we focus on the period from 2020 to 2022. Each data point represents a reported incident, including features such as crime type, date, time, district and GPS coordinates. For crime type, we focus on a selected subset of “focus crimes” and therefore do not include all reported crimes in San Francisco. These focus crimes include categories such as: Arson, Burglary, Drug Violation, Embezzlement, Forgery and Counterfeiting, Larceny Theft, Missing Person, Motor Vehicle theft, Prostitution, Robbery, Stolen Property, Vandalism, Weapon Laws
+            The SF crime dataset is divided into two parts: one covering 2003–2018 and another covering 2018 to the present day. This division is due to a shift in how incidents were recorded and administered. Some crime categories were affected by this change, as naming conventions were updated and certain categories were merged. As a result, the selected focus crimes were chosen based on consistency across this transition.
+            It is important to note that the data consists of incidents reported by the police. This means the data does not necessarily reflect true crime levels, and COVID may also have influenced reporting behavior, policing practices, and enforcement priorities. This is not investigated further in this analysis, but is noted to provide important context for interpreting the results. This topic is motivated by the fact that COVID disrupted daily life and the broader dynamics of social interaction. Future pandemics may cause similar disruptions, and understanding these patterns can help inform resource allocation in policing and serve as a case study for cities worldwide. 
+            We investigate these crime patterns during COVID by comparing a pre-COVID period with the COVID period itself.
         </p>
         <p>
             Scroll down to explore different perspectives on the data.
@@ -58,7 +59,9 @@
     <section>
         <h2>What crimes increased the most during the pandemic</h2>
         <p>
-            This visualization compares the number of crimes in each category before and during the pandemic. It highlights which crime types saw the largest increases. From the plot, burglary and motor vehicle theft stands out with a significant increase during the pandemic compared to other crimes.
+            This plot compares the number of crimes in each category before, during, and after the pandemic. It highlights which crime categories experienced the largest increases. Less obvious from the graph is the total number of reported crimes decreases by 20.4% from pre-covid to covid with most crimes categories showing decreases of more than 20%. However, some crime categories became more frequent during the pandemic. 
+            From the plot, some crimes that stand out with significant increases include burglary (+63.1 %) and motor vehicle (+42.8 %). Arson also shows a comparable increase (+47.4%), but is less visually prominent due to its relatively low number of incidents. We observe a partial recovery in the post covid period indicating these changes are linked to the temporary societal shifts caused by the pandemic. 
+            Focusing on burglary and motor vehicle theft, we identify these as two of the categories that increased the most during the pandemic. But where do these increases occur across different regions of San Francisco?
         </p>
 
         <div class="viz">
@@ -69,22 +72,25 @@
 
     <!-- VISUALIZATION 2 -->
     <section>
-        <h2>Where did these crimes change the most?</h2>
+        <h2>Where did the crimes change the most?</h2>
         <p>
-            By analyzing the ratio of the count of crime incidents in the preCOVID period to the count of crime incidents during the COVID period, we can identify the most affected districts and dive deeper into the characteristics of these areas. From the visualization, it is clear that the districts: Northern, Richmond and Park (which lie in the north-west part of the city) experienced the biggest increase in burglaries, while at the same time the districts: Bayview and Central (which lie in the south-east part of the city) experienced a growth in motor vehicle thefts.
+            The next plot is a heatmap showing the different regions of San Francisco. One heatmap focuses on burglary (left), while the other shows motor vehicle theft (right). The maps highlight the relative change in the number of incidents across districts. Values close to yellow (1) indicate little or no change between the two periods. Red indicates a decrease, while green indicates an increase. The first observation is that most districts experience an increase in incidents, but this increase is uneven, with some regions showing increases of over 100%.
+            Burglary increases mostly in the northern part of SF in regions like Northern, Richmond and Park.
+            Motor vehicle theft increases is more evenly distributed across districts, but still shows notable increases in southern areas such as Ingleside. Having identified which crimes increased the most and where these increases occurred, the next step is to examine whether there are temporal patterns associated with these changes.
         </p>
 
         <div class="viz">
-            <iframe src="map_viz/crime_ratio_districts_maps.html"></iframe>
+            <iframe src="map_viz/heatmap_ratio.html"></iframe>
         </div>
     </section>
 
 
     <!-- VISUALIZATION 3 -->
     <section>
-        <h2>Did the time in a week of the crime change due to COVID-19?</h2>
+        <h2>Did the Timing of Crime Change During COVID-19??</h2>
         <p>
-            Looking at the hourly distribution throughout the week in the relevant districts, we can see what patterns in the occurencies of the crimes has formed along with the increased frequency due to the pandemic. A general observation that can be easily spotted is that, because of more incidents during the COVID-19, the distributions are smoother and display trends rather than sharp pikes or drops. When analzying burglary patterns, one can notice that in the Park, Northern and Richmond districts the high activity periods span from the afternoon thoroughout the night. While in general in all those three districts more incidents are registered during the weekend, in Richmond Saturday has relatively lower number of burglaries.
+            This visualization shows the number of incidents across different hours of the day, distributed over the seven days of the week. The x-axis represents time, grouped by day, with 24 hourly intervals per day. Hovering over the bars reveals the exact hour. The y-axis shows the average number of incidents for each hour on a given day. The top plot shows the pre-COVID period, while the bottom plot shows the COVID period for comparison. In the top left corner one can switch between the crimes burglary and motor vehicle theft. The colored markers allows for displaying or removing individual districts. Building on previous findings, burglary increased the most in Richmond, Northern, and Park. Focusing on Richmond, we observe a steady increase in incidents during the afternoon, with peaks occurring between 20:00 and 04:00. In Northern, the trend is even more pronounced, with incidents increasing from around 15:00 until 04:00. Park does not exhibit the same clear pattern and appears more similar to the pre-COVID distribution, although with a higher overall number of incidents. For motor vehicle theft in Ingleside, both pre-COVID and during COVID periods show similar patterns, with incidents increasing throughout the day and peaking around 18:00. Overall, the pattern suggests that the “pulse” of crime remains similar in its hourly distribution, but with a higher number of occurrences during the pandemic. 
+            This suggests that the pandemic did not fundamentally change when crimes occur, but rather increased their frequency.
         </p>
 
         <div class="viz">
@@ -98,7 +104,7 @@
     <section>
         <h2>Conclusion</h2>
         <p>
-            Something here...
+            In comparing pre-COVID and COVID crime patterns some key findings are: the total decrease of overall crime with 20 %. Some crimes show significant increases with some above 50 %. These increases are not evenly distributed spatially and are stronger in certain districts. The timing of these crimes didn't seem differ a lot compared to pre covid distributions. These findings can be part of a larger comparison between cities with similar data and city structures or dissimilar to see how crime patterns might differ between urban and more rural cities.
         </p>
     </section>
 
